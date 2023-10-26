@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
+import { ENV } from "../config.js";
 
 export const connectDataBase = () => {
   mongoose
-    .connect("mongodb+srv://sakhidadskd:oQZ6jFQ34iO5LUm9@cluster0.mjlhsl1.mongodb.net/", {
+    .connect(ENV.DB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
