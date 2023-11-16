@@ -16,9 +16,9 @@ router.route('/authenticate').post(controller.verifyUser, (req, res) => res.end(
 router.route('/login').post(controller.Login); // login in app
 
 /** GET Methods */
-router.route('/user').get(controller.updateUser) // user with username
-
-router.route('/user/:username').get(controller.verifyUser,controller.getUser) // user with username
+router.route('/user').get(controller.updateUser)// user with username
+router.route('/user/getall').get(controller.getAllUser)
+router.route('/user/:id').get(controller.verifyUser,controller.getUser) // user with username
 router.route('/generateOTP').get(controller.verifyUser, localVariables, controller.generateOTP) // generate random OTP
 router.route('/verifyOTP').get(controller.verifyUser,controller.verifyOTP) // verify generated OTP
 router.route('/createResetSession').get(controller.createResetSession) // reset all the variables
